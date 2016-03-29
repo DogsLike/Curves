@@ -11,13 +11,13 @@ def buyGold(request, num):
 	res = "not"
 	if num=="5":
 		res = "ok"+"_50"
-		tradeDataHandler(50)
+		tradeDataHandler(5)
 	if num=="48":
 		res = "ok"+"_500"
-		tradeDataHandler(500)
+		tradeDataHandler(48)
 	if num=="288":
 		res = "ok"+"_3000"
-		tradeDataHandler(3000)
+		tradeDataHandler(288)
 	return HttpResponse(res)
 
 
