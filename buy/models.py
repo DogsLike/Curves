@@ -1,12 +1,17 @@
 from django.db import models
 
 # Create your models here.
-class Question(models.Model):
-	question_text = models.CharField(max_length=200)
-	pub_date = models.DateTimeField('date published')
+class BuyDiamond(models.Model):
+	"""docstring for BuyDiamond"""
+	diamond_total_num = models.IntegerField(default=0)
+		
+
+class DiamondTrade(models.Model):
+	"""docstring for DiamondTrade"""
+	ip = models.CharField(max_length=50)
+	diamond_num = models.IntegerField(default=0)
+	trade_date = models.DateTimeField('trade date')
 
 
-class Choice(models.Model):
-	question = models.ForeignKey(Question,on_delete = models.CASCADE)
-	choice_text = models.CharField(max_length=200)
-	votes = models.IntegerField(default=0)
+
+		
