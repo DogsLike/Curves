@@ -1,4 +1,6 @@
-﻿from django.shortcuts import render
+﻿#coding=utf-8
+
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.utils import timezone
 from .models import BuyDiamond,DiamondTrade
@@ -68,7 +70,7 @@ def anysdk_payment(request):
     '''
     contributed by 杜可夫 (duke.cliff@icloud.com)
     '''
-    html = 'ok'
+    html = u'ok'
     if request.method == 'POST':
         #private_data may be refererd to as your own tracking number
         private_data = request.POST.get('private_data', '')
@@ -96,7 +98,7 @@ def anysdk_payment(request):
             if validated_order:
                 #支付完成，并且合法，更新支付状态信息或者通知游戏服务器更新数据...
                 pass
-    html = 'ok'
+    html = u'ok'
     response = HttpResponse(html)
     return response
 
