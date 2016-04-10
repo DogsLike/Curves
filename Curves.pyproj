@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13c92abc-1a36-4cb4-ba46-2360022ef6fb}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="buy\admin.py" />
+    <Compile Include="buy\apps.py" />
+    <Compile Include="buy\migrations\0001_initial.py" />
+    <Compile Include="buy\migrations\0002_auto_20160329_1704.py" />
+    <Compile Include="buy\migrations\0003_buydiamond_diamondtrade.py" />
+    <Compile Include="buy\migrations\__init__.py" />
+    <Compile Include="buy\models.py" />
+    <Compile Include="buy\tests.py" />
+    <Compile Include="buy\urls.py" />
+    <Compile Include="buy\views.py" />
+    <Compile Include="buy\__init__.py" />
+    <Compile Include="Curves\settings.py" />
+    <Compile Include="Curves\urls.py" />
+    <Compile Include="Curves\wsgi.py" />
+    <Compile Include="Curves\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="ranklist\admin.py" />
+    <Compile Include="ranklist\apps.py" />
+    <Compile Include="ranklist\migrations\__init__.py" />
+    <Compile Include="ranklist\models.py" />
+    <Compile Include="ranklist\tests.py" />
+    <Compile Include="ranklist\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ranklist\views.py" />
+    <Compile Include="ranklist\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="buy" />
+    <Folder Include="buy\migrations" />
+    <Folder Include="Curves" />
+    <Folder Include="ranklist\" />
+    <Folder Include="ranklist\migrations\" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
