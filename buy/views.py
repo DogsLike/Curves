@@ -6,6 +6,7 @@ from django.utils import timezone
 from .models import BuyDiamond,DiamondTrade
 import simplejson
 import hashlib
+import unicodedata
 # Create your views here.
 def index(request):
 	return HttpResponse("Hello World!")
@@ -39,7 +40,7 @@ def login_game(request):
     html = '' 
     ret = 'login failed' 
     private_key = '6A1C6E8C94DE8A829E2CD9387F0DCC9E' 
-    #loginCheckUrl = 'http://oauth.anysdk.com/api/User/LoginOauth/' 
+    #loginCheckUrl = 'http://oauth.anysdk.com/api/User/LoginOauth/'
     if request.method == 'POST': 
         post_key = request.POST.get('private_key', '') 
         if post_key == private_key: 
@@ -58,7 +59,7 @@ def login_game(request):
             response = anysdk_conn.getresponse() 
             if response.status == 200: 
                 content = response.read() 
-                #print "any_sdk login result:", content 
+                #print "any_sdk login result:", content
                 resp_dict = json.loads(content) 
                 resp_dict['ext'] = 'game_tag' 
                 ret = resp_dict 
@@ -70,7 +71,7 @@ def anysdk_payment(request):
     '''
     contributed by 杜可夫 (duke.cliff@icloud.com)
     '''
-    html = u'ok'
+    html = 'OK'
     if request.method == 'POST':
         #private_data may be refererd to as your own tracking number
         private_data = request.POST.get('private_data', '')
