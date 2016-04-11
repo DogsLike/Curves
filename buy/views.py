@@ -70,7 +70,7 @@ def anysdk_payment(request):
     '''
     contributed by 杜可夫 (duke.cliff@icloud.com)
     '''
-    html = u'not'
+    html = u'ok'
     if request.method == 'POST':
         #private_data may be refererd to as your own tracking number
         private_data = request.POST.get('private_data', '')
@@ -97,7 +97,7 @@ def anysdk_payment(request):
                 validated_order = True
             if validated_order:
                 #支付完成，并且合法，更新支付状态信息或者通知游戏服务器更新数据...
-                html = u'ok'
+                pass
     response = HttpResponse(html)
     return response
 
